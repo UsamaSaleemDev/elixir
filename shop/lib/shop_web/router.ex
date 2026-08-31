@@ -27,7 +27,9 @@ defmodule ShopWeb.Router do
     get "/", PageController, :home
     get "/products", ProductController, :index
     get "/random", RandomController, :random
-    get "/products/:id", ProductController, :show
+    get "/products/:slug", ProductController, :show
+
+    resources "/promotions", PromotionController
 
     resources "/users", UserController do
       resources "/posts", PostController, only: [:index, :show]

@@ -1,13 +1,14 @@
 defmodule ShopWeb.ProductHTML do
   use ShopWeb, :html
+  alias Shop.Products.Product
 
   embed_templates "product_html/*"
 
-  attr :name, :string, required: true
+  attr :product, Product, required: true
 
   def product(assigns) do
     ~H"""
-    <p>Game: {assigns.name}</p>
+    <.link href={~p"/products/#{@product.slug}"} class="block">Game: {@product.name}</.link>
     """
   end
 end
