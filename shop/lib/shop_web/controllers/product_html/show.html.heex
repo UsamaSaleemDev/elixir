@@ -1,4 +1,11 @@
 <Layouts.app flash={@flash}>
-  <h1>This is the product ID = <%= @id %></h1>
-  <p :if={@promo}>You have the promo code.</p>
+  <%!-- <h1>This is the product ID = <%= @id %></h1> --%>
+  <%!-- <h1>This is the product page for = <%= @product.name %></h1> --%>
+  <%!-- <p :if={@promo}>You have the promo code.</p> --%>
+  <.product :if={@product != nil} name={@product.name}/>
+
+  <.button>
+  Click me!
+  </.button>
+  <%!-- <.back navigate={~p"/products"}>Back to products</.back> --%>
 </Layouts.app>
