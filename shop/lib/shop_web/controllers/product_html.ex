@@ -8,7 +8,11 @@ defmodule ShopWeb.ProductHTML do
 
   def product(assigns) do
     ~H"""
-    <.link href={~p"/products/#{@product.slug}"} class="block">Game: {@product.name}</.link>
+    <.link href={~p"/products/#{@product.slug}"} class="block">
+      <p>ID: <%= @product.id %></p>
+      <p>Game: <%= @product.name %></p>
+      <p>Console: <%= @product.console %></p>
+    </.link>
     """
   end
 end
