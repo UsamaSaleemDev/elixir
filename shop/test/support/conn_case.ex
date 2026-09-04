@@ -14,6 +14,7 @@ defmodule ShopWeb.ConnCase do
   by setting `use ShopWeb.ConnCase, async: true`, although
   this option is not recommended for other databases.
   """
+  # alias ElixirLS.LanguageServer.Plugins.Phoenix
 
   use ExUnit.CaseTemplate
 
@@ -27,6 +28,7 @@ defmodule ShopWeb.ConnCase do
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
+      import Phoenix.LiveViewTest
       import ShopWeb.ConnCase
     end
   end
